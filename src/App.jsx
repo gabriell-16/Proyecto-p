@@ -1,3 +1,5 @@
+import Home from './pages/Home'
+import './css/App.css'
 import { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
@@ -8,9 +10,7 @@ const App =() =>{
 
   return (
     <>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+     <Home/>
     </>
   )
 }
