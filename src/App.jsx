@@ -1,13 +1,14 @@
-import Home from './pages/Home'
-import './css/App.css'
+import React from 'react';
+import Home from './pages/Home';
+import './css/App.css';
+import './css/Carrusel.css';
 
-const App =() =>{
-
+const App = () => {
   return (
     <>
-     <Home/>
+      <Home />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,0 +1,13 @@
+.carousel-container {
+  width: 100%;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 450px; /* ajusta este valor según tus necesidades */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
