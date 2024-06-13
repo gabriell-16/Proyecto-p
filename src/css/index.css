@@ -66,3 +66,44 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.formContainer {
+  background: black;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  width: 300px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: white;
+  margin: 10px 0 5px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #080808;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
