@@ -1,11 +1,9 @@
 .footer {
-  background: linear-gradient(180deg, #000000, #4d4d4d);
+  background: #2C3E50;
   color: #ffffff;
-  padding: 20px 0;
-  width: 100%; 
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
   position: relative;
-  bottom: 0;
 }
 
 .footer-content {
@@ -13,8 +11,8 @@
   justify-content: space-around;
   text-align: center;
   padding: 20px;
-  width: 100%; 
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section {
@@ -65,12 +63,18 @@
 }
 
 .footer-bottom {
-  text-align: center;
-  padding: 10px 0;
+  height: 30px;
   font-size: 12px;
   border-top: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.footer-bottom p {
+  margin: 0;
+  width: 20%;
+}
 
 .section i {
   margin-right: 8px;

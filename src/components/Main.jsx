@@ -11,18 +11,23 @@ const Main = () => {
         <section className="section">
           <h1>Vaca's Food</h1>
           <p>
-            !Un restauranteparra disfrutar con toda la familia¡
+            Un restaurante para disfrutar con toda la familia
           </p>
         </section>
+        <div className="main-carrusel">
+          {/* Ramiro */}
+          <CarruselMenu />
+        </div>
 
-        {/* Ramiro */}
-       <CarruselMenu/>
+        <div className="main-reservacion">
+          {/*Formulario*/}
+          <ReservForm />
+        </div>
 
-        {/*Formulario*/}
-        <ReservForm />
-
-        {/*Juan Pablo*/}
-        <Drive />
+        <div className="main-drive">
+          {/*Juan Pablo*/}
+          <Drive />
+        </div>
       </main>
     </>
   );

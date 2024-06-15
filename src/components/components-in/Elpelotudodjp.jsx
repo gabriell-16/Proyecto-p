@@ -34,8 +34,8 @@ const Drive = () => {
                 onClick={() => handleFlip(index)}
                 style={{
                   perspective: '1000px',
-                  width: '150px',
-                  height: '150px',
+                  width: '140px',
+                  height: '220px',
                   margin: '10px',
                   cursor: 'pointer',
                   position: 'relative',
@@ -91,6 +91,7 @@ const Drive = () => {
                 marginTop: '20px',
                 padding: '10px 20px',
                 backgroundColor: 'yellow',
+                color: 'black',
                 border: 'none',
                 borderRadius: '5px',
                 cursor: 'pointer',
@@ -101,7 +102,7 @@ const Drive = () => {
           </button>
         </div>
         <section> 
-          <h1>VacasFood</h1>
+          <h1>Vaca's Food</h1>
           <p>Un restaurante para compartir con toda la Familia</p>
         </section>
     </>

@@ -13,12 +13,12 @@ const Footer = () => {
         <div className="section">
           <h2>CONTACTO</h2>
           <p>
-            <i className="fas fa-phone-alt"></i> Reservas: a nuestro número +54 9 (381) 123-4567<br />
+            <i className="fas fa-phone-alt"></i> Telefono: +54 9 (381) 123-4567<br />
             <i className="fas fa-envelope"></i> E-mail: tuvaquita@gmail.com
           </p>
         </div>
         <div className="section">
-          <h2>SOCIAL</h2>
+          <h2>REDES</h2>
           <div className="social-icons">
             <a target='_blank' href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i><br /> </a>
             <a target='_blank' href="https://www.instagram.com/"><i className="fab fa-instagram"></i><br /> </a>
@@ -30,9 +30,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>
-          <span>
           &copy; Derechos reservados por VacasFood
-          </span>
         </p>
       </div>
     </footer>

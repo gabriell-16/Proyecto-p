@@ -57,7 +57,7 @@ const ReservForm = () =>
 
         return(
             <div className="formContainer">
-                <h2>Hacer Reservacion</h2>
+                <h2 className="tituloFormulario">Reservar</h2>
                 {resForm ? (
                     <form id="res-Form " onSubmit={ConfReserv}>
                         <label htmlFor="fecha">Fecha:</label>
