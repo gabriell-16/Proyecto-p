@@ -4,7 +4,7 @@
 
 .carousel-container img {
   width: 100%;
-  height: auto;
+  height: 400px;
   object-fit: cover;
   max-height: 450px; /* ajusta este valor según tus necesidades */
   border-radius: 0.5rem;

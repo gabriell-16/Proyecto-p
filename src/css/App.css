@@ -2,7 +2,9 @@
   width: 100%;
   text-align: center;
 }
-
+body{
+  background-color: #ECF0F1;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -37,4 +39,20 @@
 
 .read-the-docs {
   color: #888;
+}
+.tituloFormulario{
+  color: #ddd;
+}
+.main-carrusel{
+  width: 80%;
+  margin: auto;
+}
+.main-reservacion{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.images-container h2{
+  color: black;
 }
