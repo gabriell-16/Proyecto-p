@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content container">
-        <div className="section">
+        <div className="section" id='Contacto'>
           <h2>¿DONDE ESTAMOS?</h2>
           <p>Barrio Oeste II</p><br></br>
           <p>Tucumán-San Miguel de Tucumán</p>

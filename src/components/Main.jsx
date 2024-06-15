@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <>
       <main className="main-content">
-        <section className="section">
+        <section className="section" id="Home">
           <h1>Vaca's Food</h1>
           <p>
             Un restaurante para disfrutar con toda la familia
@@ -19,13 +19,12 @@ const Main = () => {
           <CarruselMenu />
         </div>
 
-        <div className="main-reservacion">
+        <div className="main-reservacion" id="Reservacion">
           {/*Formulario*/}
           <ReservForm />
         </div>
 
-        <div className="main-drive">
-          {/*Juan Pablo*/}
+        <div className="main-drive" id="Menú">
           <Drive />
         </div>
       </main>

@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -68,15 +72,20 @@ button:focus-visible {
 }
 
 .formContainer {
-  background: black;
+  background: #2C3E50;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(17, 17, 17);
   width: 300px;
 }
 
 h2 {
   color: white;
+  text-align: center;
+}
+
+.tituloFormulario{
+  color: black;
   text-align: center;
 }
 
@@ -106,4 +115,5 @@ button {
 
 button:hover {
   background-color: #218838;
+  color: #080808;
 }
