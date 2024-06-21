@@ -1,12 +1,21 @@
-import { useState } from "react";
-const API = 'http//localhost:3000/registrar';
+import { useState, useEffect } from "react";
+const API = `http://localhost:3000/api/obtener/datos/`;
 
 const ReservForm = () =>
     {
         const [resForm, setResForm]= useState (true);
         const [resDatos, setResDatos]=useState({
-            fecha:'', personas:'', hora:'',nombre:'',apellido:'',email:'',tel:'',
+            fecha:'', mesas:'', hora:'',nombre:'',apellido:'',email:'',tel:'',
         })
+        
+        const [fechaMin,setFechaMin] = useState("");
+
+        const limpiarInp = () =>{
+            setResDatos({
+                fecha:'', mesas:'', hora:'',nombre:'',apellido:'',email:'',tel:'',
+            })
+
+        }
 
         const ConfReserv = async (e) =>
             {
@@ -14,7 +23,9 @@ const ReservForm = () =>
                 setResForm(false);
 
                 try{ 
-                const datform = await fetch(API,{
+                const datform = await fetch(
+                    `http://localhost:3000/api/confirmar/reservacion/`,
+                    {
                     method: 'POST',
                     headers: {
                         'Content-Type' : 'application/json'},
@@ -32,7 +43,9 @@ const ReservForm = () =>
                 e.preventDefault();
                 
                 try{
-                     const datform = await fetch(API,{
+                     const datform = await fetch(
+                       `http://localhost:3000/api/confirmar/reservacion`,
+                      {
                      method: 'POST',
                      headers:{
                         'Content-Type' : 'application/json'},
@@ -55,6 +68,21 @@ const ReservForm = () =>
             setResDatos((prev) => ({...prev, [name]: value}));
             }
 
+            const fechas =()=>
+                {
+                    const date = new Date();
+                    const año = date.getFullYear();
+                    const mes = String(date.getMonth() + 1).padStart(2,"0");
+                    const dia = String(date.getDate()).padStart(2,"0");
+                    const fechaMin = `${año}-${mes}-${dia}`;
+                    setFechaMin(fechaMin);
+                }
+
+                useEffect(()=>{
+                    fechas();
+                    },[]);
+
+
         return(
             <div className="formContainer">
                 <h2 className="tituloFormulario">Reservar</h2>
@@ -62,11 +90,11 @@ const ReservForm = () =>
                     <form id="res-Form " onSubmit={ConfReserv}>
                         <label htmlFor="fecha">Fecha:</label>
                         <input type="date" id="fecha" name="fecha" 
-                        value={resDatos.fecha} onChange={handleChange} required/>
+                        value={resDatos.fecha} onChange={handleChange} min={fechaMin} required/>
 
-                        <label htmlFor="personas">Personas:</label>
-                        <input type="number" id="personas" name="personas" 
-                        value={resDatos.personas} onChange={handleChange} placeholder="Cantidad" required/>
+                        <label htmlFor="personas">Mesas:</label>
+                        <input type="number" id="mesas" name="mesas" 
+                        value={resDatos.mesas} onChange={handleChange} placeholder="Cantidad de Mesas" required/>
 
                         <label htmlFor="hora">Hora:</label>
                         <select id="hora" name="hora" 
@@ -77,7 +105,7 @@ const ReservForm = () =>
                             <option value="22:00">22:00</option>
                             <option value="23:00">23:00</option>                           
                         </select>
-                        <button type="submit">Reservar</button>
+                        <button type="submit" onClick={limpiarInp}>Reservar</button>
                     </form>
                 
                 ):( 
@@ -99,7 +127,7 @@ const ReservForm = () =>
                         <input type="number" id="tel" name="tel"
                         value={resDatos.tel} onChange={handleChange} placeholder="Telefono" required/>
 
-                        <button type="submit">Reservar </button>
+                        <button type="submit" onClick={limpiarInp}>Reservar</button>
                     </form>
                 )}
             </div>
