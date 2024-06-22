@@ -105,7 +105,7 @@ const ReservForm = () =>
                             <option value="22:00">22:00</option>
                             <option value="23:00">23:00</option>                           
                         </select>
-                        <button type="submit" onClick={limpiarInp}>Reservar</button>
+                        <button type="submit" >Reservar</button>
                     </form>
                 
                 ):( 
