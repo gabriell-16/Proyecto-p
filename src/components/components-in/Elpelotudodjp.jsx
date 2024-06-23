@@ -20,7 +20,7 @@ const Drive = () => {
     };
   //Funcion que redirige a una url papu
     const handleButtonClick = () => {
-        window.location.href = "http://localhost:3000/menuPDF";
+        window.location.href = "http://localhost:3000/api/menuPDF";
     };
 
     return(
