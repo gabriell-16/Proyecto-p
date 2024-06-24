@@ -102,8 +102,8 @@ const Drive = () => {
           </button>
         </div>
         <section> 
-          <h1>Vaca's Food</h1>
-          <p>Un restaurante para compartir con toda la Familia</p>
+          <h1 id="texto">Vaca's Food</h1>
+          <p id="texto">Un restaurante para compartir con toda la Familia</p>
         </section>
     </>
     )

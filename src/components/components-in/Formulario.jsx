@@ -6,6 +6,7 @@ const ReservForm = () => {
   });
   const [fechaMin, setFechaMin] = useState("");
   const [formVisible, setFormVisible] = useState(false);
+  const [showMessage, setShowMessage] = useState(false); 
 
   const limpiarInp = () => {
     setResDatos({
@@ -33,7 +34,7 @@ const ReservForm = () => {
       if (response.ok) {
         limpiarInp();
         alert('Reservación completada con éxito');
-        setFormVisible(false); // Ocultar el formulario después de enviar
+        setFormVisible(false);
       } else {
         console.error('Error en la respuesta:', result);
       }
@@ -79,8 +80,18 @@ const ReservForm = () => {
               value={resDatos.fecha} onChange={handleChange} min={fechaMin} required />
 
             <label htmlFor="mesas">Mesas:</label>
-            <input type="number" id="mesas" name="cantidad"
-              value={resDatos.cantidad} onChange={handleChange} placeholder="Cantidad de Mesas" required />
+            <input 
+              type="number" 
+              id="mesas" 
+              name="cantidad"
+              value={resDatos.cantidad} 
+              onChange={handleChange} 
+              placeholder="Cantidad de Mesas" 
+              required 
+              onClick={() => setShowMessage(true)} 
+              onBlur={() => setShowMessage(false)} 
+            />
+            {showMessage && <small className="message">La mesa es para 4 personas!</small>}
 
             <label htmlFor="hora">Hora:</label>
             <select id="hora" name="hora"
@@ -102,11 +113,11 @@ const ReservForm = () => {
 
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="correo"
-              value={resDatos.email} onChange={handleChange} placeholder="Email" required />
+              value={resDatos.correo} onChange={handleChange} placeholder="Email" required />
 
             <label htmlFor="tel">Teléfono:</label>
             <input type="number" id="tel" name="telefono"
-              value={resDatos.tel} onChange={handleChange} placeholder="Teléfono" required />
+              value={resDatos.telefono} onChange={handleChange} placeholder="Teléfono" required />
 
             <button type="submit">Reservar</button>
           </form>

@@ -9,8 +9,8 @@ const Main = () => {
     <>
       <main className="main-content">
         <section className="section" id="Home">
-          <h1>Vaca's Food</h1>
-          <p>
+          <h1 id="texto">Vaca's Food</h1>
+          <p id="texto">
             Un restaurante para disfrutar con toda la familia
           </p>
         </section>
