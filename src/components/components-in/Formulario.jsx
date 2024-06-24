@@ -5,8 +5,10 @@ const ReservForm = () => {
     fecha: '', cantidad: '', hora: '', nombre: '', apellido: '', correo: '', telefono: '',
   });
   const [fechaMin, setFechaMin] = useState("");
+  const [fechaMax, setFechaMax] = useState("");
   const [formVisible, setFormVisible] = useState(false);
   const [showMessage, setShowMessage] = useState(false); 
+  const [message, setMessage] = useState(false);
 
   const limpiarInp = () => {
     setResDatos({
@@ -33,7 +35,7 @@ const ReservForm = () => {
 
       if (response.ok) {
         limpiarInp();
-        alert('Reservación completada con éxito');
+        alert('Email eviado!. !Por favor confirme la Reservación!');
         setFormVisible(false);
       } else {
         console.error('Error en la respuesta:', result);
@@ -58,7 +60,17 @@ const ReservForm = () => {
     const mes = String(date.getMonth() + 1).padStart(2, "0");
     const dia = String(date.getDate()).padStart(2, "0");
     const fechaMin = `${año}-${mes}-${dia}`;
+
+    
+    const maxDate = new Date(date);
+    maxDate.setMonth(maxDate.getMonth() + 5);
+    const añoMax = maxDate.getFullYear();
+    const mesMax = String(maxDate.getMonth() + 1).padStart(2, "0");
+    const diaMax = String(maxDate.getDate()).padStart(2, "0");
+    const fechaMax = `${añoMax}-${mesMax}-${diaMax}`;
+
     setFechaMin(fechaMin);
+    setFechaMax(fechaMax);
   };
 
   useEffect(() => {
@@ -77,7 +89,13 @@ const ReservForm = () => {
           <form id="res-Form" onSubmit={handleSubmit}>
             <label htmlFor="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha"
-              value={resDatos.fecha} onChange={handleChange} min={fechaMin} required />
+              value={resDatos.fecha} onChange={handleChange} 
+              min={fechaMin} max={fechaMax} required 
+              onFocus={()=>setMessage(true)}
+              onBlur={()=>setMessage(false)}
+              /> 
+
+              {message && <small className="message">Reservación con un tope de 5 meses</small>}
 
             <label htmlFor="mesas">Mesas:</label>
             <input 

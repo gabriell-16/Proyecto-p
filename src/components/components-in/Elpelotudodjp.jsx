@@ -41,6 +41,7 @@ const Drive = () => {
                   position: 'relative',
                   flexBasis: '30%',
                   boxSizing: 'border-box',
+                  color:'black',
                 }}
               >
                 <div style={{
@@ -77,7 +78,7 @@ const Drive = () => {
                       borderRadius: '10px',
                       backgroundColor: '#f0f0f0',
                       transform: 'rotateY(180deg)',
-                    padding: '10px',
+                      padding: '10px',
                   }}>
                     <p>{image.info}</p>
                   </div>
